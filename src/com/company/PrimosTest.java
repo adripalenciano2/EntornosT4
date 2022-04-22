@@ -28,4 +28,25 @@ class PrimosTest {
         assertArrayEquals(array2, Primos.generarPrimos(7));
         assertArrayEquals(array3, Primos.generarPrimos(7));
     }
+
+    @Test
+    void cribaTest(){
+        boolean[] array={false, false, true, true, false, true, false, true, false, false, false, true, false};
+        boolean[] comprobar={true, true, true, true, true,true, true, true, true, true, true, true, true};
+
+        Primos.criba(13, comprobar);
+        assertArrayEquals(array, comprobar);
+
+
+
+    }
+
+    @Test
+    void cribaFalse(){
+        boolean[] array={false, false, true, true, true, true, false, true, false, false, false, true, false};
+        boolean[] comprobar={true, true, true, true, true,true, true, true, true, true, true, true, true};
+
+        Primos.criba(13, comprobar);
+        assertArrayEquals(array, comprobar);
+    }
 }
