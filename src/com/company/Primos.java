@@ -2,7 +2,6 @@ package com.company;
 public class Primos {
     // Generar números primos de 1 a max
     public static int[] generarPrimos (int max) {
-        int i,j;
         if (max >= 2) {
             // Declaraciones
             int dim = max + 1; // Tamaño del array
@@ -18,18 +17,25 @@ public class Primos {
             int cuenta = cuentaPrimos(dim, esPrimo);
 
             // Rellenar el vector de números primos
-            int[] primos = new int[cuenta];
-            for (i=0, j=0; i<dim; i++) {
-                if (esPrimo[i]) {
-                    primos[j++] = i;
-                }
-            }
-            return primos;
+             return vectorPrimos(dim, esPrimo, cuenta);
+
         }
         else { // max < 2
             return new int[0];
             // Vector vacío
         }
+    }
+
+    static int[] vectorPrimos(int dim, boolean[] esPrimo, int cuenta) {
+        int j;
+        int i;
+        int[] primos = new int[cuenta];
+        for (i=0, j=0; i< dim; i++) {
+            if (esPrimo[i]) {
+                primos[j++] = i;
+            }
+        }
+        return primos;
     }
 
     static int cuentaPrimos(int dim, boolean[] esPrimo) {

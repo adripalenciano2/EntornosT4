@@ -87,4 +87,19 @@ class PrimosTest {
         assertEquals(3,Primos.cuentaPrimos(3, comprobar3));
     }
 
+    @Test
+    void vectorPrimosTest(){
+        boolean[] comprobar={false, false, true, true, false, true, false, true, false, false, false, true, false};
+        int[] array={2,3,5,7,11};
+
+        assertArrayEquals(array, Primos.vectorPrimos(13, comprobar, 5));
+    }
+
+    @Test
+    void vectorPrimosFalse(){
+        boolean[] comprobar={false, false, true, true, false, true, false, true, false, false, false, true, false};
+        int[] array={2,3,5,7};
+
+        assertArrayEquals(array, Primos.vectorPrimos(13, comprobar, 5));
+    }
 }
