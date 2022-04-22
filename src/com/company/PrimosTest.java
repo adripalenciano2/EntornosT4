@@ -65,5 +65,26 @@ class PrimosTest {
         assertArrayEquals(comprobar, array);
     }
 
+    @Test
+    void cuentaPrimosTest(){
+        boolean[] comprobar={false, false, true, true, false, true, false, true, false, false, false, true, false};
+        boolean[] comprobar2={true, true, true, true, false, true};
+        boolean[] comprobar3={false, false, false};
+
+        assertEquals(5, Primos.cuentaPrimos(13, comprobar));
+        assertEquals(5, Primos.cuentaPrimos(6, comprobar2));
+        assertEquals(0,Primos.cuentaPrimos(3, comprobar3));
+    }
+
+    @Test
+    void cuentaPrimosFalse(){
+        boolean[] comprobar={false, true, true, true, true,true, true, true, true, true, true, true, true};
+        boolean[] comprobar2={true, true, true, true, false, true};
+        boolean[] comprobar3={false, false, false};
+
+        assertEquals(12, Primos.cuentaPrimos(13, comprobar));
+        assertEquals(0, Primos.cuentaPrimos(6, comprobar2));
+        assertEquals(3,Primos.cuentaPrimos(3, comprobar3));
+    }
 
 }
