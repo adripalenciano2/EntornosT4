@@ -7,12 +7,9 @@ public class Primos {
             // Declaraciones
             int dim = max + 1; // Tamaño del array
             boolean[] esPrimo = new boolean[dim];
+
             // Inicializar el array
-            for (i=0; i<dim; i++) {
-                esPrimo[i] = true;
-            }
-
-
+            inicializaArray(dim, esPrimo);
 
             // Criba
             criba(dim, esPrimo);
@@ -36,6 +33,13 @@ public class Primos {
         else { // max < 2
             return new int[0];
             // Vector vacío
+        }
+    }
+
+    static void inicializaArray(int dim, boolean[] esPrimo) {
+        int i;
+        for (i=0; i< dim; i++) {
+            esPrimo[i] = true;
         }
     }
 

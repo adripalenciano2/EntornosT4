@@ -36,9 +36,6 @@ class PrimosTest {
 
         Primos.criba(13, comprobar);
         assertArrayEquals(array, comprobar);
-
-
-
     }
 
     @Test
@@ -49,4 +46,24 @@ class PrimosTest {
         Primos.criba(13, comprobar);
         assertArrayEquals(array, comprobar);
     }
+
+    @Test
+    void inicializarArrayTest(){
+        boolean[] comprobar={true, true, true, true, true,true, true, true, true, true, true, true, true};
+        boolean[] array = new boolean[13];
+
+        Primos.inicializaArray(13,array);
+        assertArrayEquals(comprobar, array);
+    }
+
+    @Test
+    void inicializarArrayFalse(){
+        boolean[] comprobar={false, true, true, true, true,true, true, true, true, true, true, true, true};
+        boolean[] array = new boolean[13];
+
+        Primos.inicializaArray(13,array);
+        assertArrayEquals(comprobar, array);
+    }
+
+
 }
