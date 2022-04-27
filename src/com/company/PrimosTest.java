@@ -8,14 +8,18 @@ class PrimosTest {
 
     @Test
     void generarPrimosTest() {
-        
-        int [] array = {2,3,5,7,11};
-        int[]array2 = {2,3,5,7,11,13,17,19,23,29};
+
+        int[] array = {2,3,5,7,11};
+        int[] array2 = {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97};
         int[] array3 = {2};
+        int[] array4 = {2,3};
+        int[] array5 ={};
 
         assertArrayEquals(array, Primos.generarPrimos(12));
-        assertArrayEquals(array2, Primos.generarPrimos(30));
+        assertArrayEquals(array2, Primos.generarPrimos(100));
         assertArrayEquals(array3, Primos.generarPrimos(2));
+        assertArrayEquals(array4, Primos.generarPrimos(3));
+        assertArrayEquals(array5, Primos.generarPrimos(0));
     }
 
     @Test
